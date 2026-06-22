@@ -1,0 +1,35 @@
+/* Arabic glyphs → Tajawal, mapped onto the same family names the app already uses. */
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/tajawal/v9/Iurf6YBj_oCad4k1l5qjHrFpi53r.woff2) format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF;
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/tajawal/v9/Iurf6YBj_oCad4k1l5qjHrFpi53r.woff2) format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/tajawal/v9/Iurf6YBj_oCad4k1l5qjHrFpi53r.woff2) format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF;
+}
+
+@font-face {
+  font-family: 'Tajawal';
+  font-style: normal;
+  font-weight: 200 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/tajawal/v9/Iurf6YBj_oCad4k1l5qjHrFpi53r.woff2) format('woff2');
+}

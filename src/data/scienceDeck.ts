@@ -1,0 +1,30 @@
+import type { Deck } from '../types/flashcard'
+
+export const scienceDeck: Deck = {
+  id: 'science-1',
+  subject: 'Science',
+  title: 'Flashcard Game',
+  difficulty: 'medium',
+  cards: [
+    { id: '1',  question: 'What is photosynthesis?',                 answer: 'Chlorophyll absorbs light energy from the sun and converts it into chemical energy through the process of photosynthesis.', keyIdea: 'Chlorophyll = Light energy → Chemical energy', topicIcon: 'leaf',  tag: 'Question' },
+    { id: '2',  question: 'What is the powerhouse of the cell?',    answer: 'The mitochondrion — it produces ATP through cellular respiration.',                   topicIcon: 'atom',  tag: 'Question' },
+    { id: '3',  question: 'What is DNA?',                           answer: 'Deoxyribonucleic acid — a molecule that carries genetic instructions for life.',       topicIcon: 'flask', tag: 'Definition' },
+    { id: '4',  question: 'What is osmosis?',                       answer: 'The movement of water across a semi-permeable membrane from low to high solute concentration.', topicIcon: 'flask', tag: 'Definition' },
+    { id: '5',  question: 'What is Newton\'s First Law?',           answer: 'An object in motion stays in motion unless acted on by an external force.',            topicIcon: 'atom',  tag: 'Question' },
+    { id: '6',  question: 'What is the speed of light?',            answer: 'Approximately 299,792,458 metres per second in a vacuum.',                            topicIcon: 'atom',  tag: 'Question' },
+    { id: '7',  question: 'What is a catalyst?',                    answer: 'A substance that increases the rate of a chemical reaction without being consumed.',   topicIcon: 'flask', tag: 'Definition' },
+    { id: '8',  question: 'What are the products of photosynthesis?', answer: 'Glucose (C₆H₁₂O₆) and oxygen (O₂).',                                              topicIcon: 'leaf',  tag: 'Question' },
+    { id: '9',  question: 'What is cellular respiration?',          answer: 'The process of breaking down glucose to release energy in the form of ATP.',          topicIcon: 'atom',  tag: 'Definition' },
+    { id: '10', question: 'What is the atomic number?',             answer: 'The number of protons in the nucleus of an atom, which defines the element.',         topicIcon: 'atom',  tag: 'Definition' },
+    { id: '11', question: 'What is the cell membrane made of?',     answer: 'A phospholipid bilayer with embedded proteins that controls what enters and exits the cell.', topicIcon: 'leaf', tag: 'Question' },
+    { id: '12', question: 'What is gravity?',                       answer: 'A fundamental force of attraction between objects with mass; described by Newton and Einstein.', topicIcon: 'atom', tag: 'Definition' },
+    { id: '13', question: 'What is an isotope?',                    answer: 'Atoms of the same element with the same number of protons but different numbers of neutrons.', topicIcon: 'flask', tag: 'Definition' },
+    { id: '14', question: 'What is mitosis?',                       answer: 'Cell division that produces two genetically identical daughter cells from one parent cell.', topicIcon: 'leaf', tag: 'Question' },
+    { id: '15', question: 'What is the formula for water?',         answer: 'H₂O — two hydrogen atoms covalently bonded to one oxygen atom.',                     topicIcon: 'flask', tag: 'Question' },
+    { id: '16', question: 'What is a food chain?',                  answer: 'A sequence showing how energy and nutrients pass from one organism to another.',      topicIcon: 'leaf',  tag: 'Definition' },
+    { id: '17', question: 'What is kinetic energy?',                answer: 'The energy an object possesses due to its motion; KE = ½mv².',                       topicIcon: 'atom',  tag: 'Definition' },
+    { id: '18', question: 'What is the periodic table?',            answer: 'A tabular arrangement of chemical elements ordered by atomic number and electron configuration.', topicIcon: 'flask', tag: 'Question' },
+    { id: '19', question: 'What is evolution?',                     answer: 'The process of change in heritable characteristics of biological populations over successive generations.', topicIcon: 'leaf', tag: 'Definition' },
+    { id: '20', question: 'What is the greenhouse effect?',         answer: 'The trapping of solar heat in Earth\'s atmosphere by greenhouse gases like CO₂ and methane.', topicIcon: 'leaf', tag: 'Question' },
+  ],
+}

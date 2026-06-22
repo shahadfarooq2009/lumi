@@ -1,0 +1,122 @@
+/* Default theme tokens (purple) — overridden at runtime by applyColorTheme */
+:root {
+  --brand: #7c4dff;
+  --brand-light: #b388ff;
+  --brand-soft: #f3eeff;
+  --brand-softer: #f8f5ff;
+  --brand-deep: #5b2fd9;
+  --brand-rgb: 124, 77, 255;
+  --lumi-primary: #7c4dff;
+  --lumi-primary-2: #9a6bff;
+  --lumi-secondary: #b388ff;
+  --lumi-soft: #f1edff;
+  --lumi-soft-2: #f8f5ff;
+  --lumi-purple: #7c4dff;
+  --lumi-purple-light: #9a6bff;
+  --lumi-purple-pink: #b388ff;
+  --pricing-primary: #7c4dff;
+  --pricing-primary-deep: #9a6bff;
+  --pricing-secondary: #b388ff;
+  --pricing-accent: #e9deff;
+  --pricing-bg: #f7f7ff;
+  --pricing-bg-soft: #efebff;
+  --pricing-line: #ece7fb;
+  --settings-accent: #7c4dff;
+  --settings-accent-soft: #f3eeff;
+  --settings-accent-border: #c4b5fd;
+  --shadow-glow: 0 8px 28px -6px rgba(124, 77, 255, 0.32);
+  --shadow-lg: 0 12px 32px -8px rgba(124, 77, 255, 0.18);
+  --lumi-purple-black: #06020c;
+}
+
+/* Remap legacy hardcoded purple Tailwind classes to theme tokens */
+.text-\[\#7C4DFF\],
+.text-\[\#7c4dff\] {
+  color: var(--brand) !important;
+}
+
+.hover\:text-\[\#7C4DFF\]:hover,
+.hover\:text-\[\#7c4dff\]:hover {
+  color: var(--brand) !important;
+}
+
+.bg-\[\#7C4DFF\],
+.bg-\[\#7c4dff\] {
+  background-color: var(--brand) !important;
+}
+
+.hover\:bg-\[\#7C4DFF\]:hover,
+.hover\:bg-\[\#7c4dff\]:hover,
+.group:hover .group-hover\:bg-\[\#7C4DFF\],
+.group:hover .group-hover\:bg-\[\#7c4dff\] {
+  background-color: var(--brand) !important;
+}
+
+.border-\[\#7C4DFF\],
+.border-\[\#7c4dff\] {
+  border-color: var(--brand) !important;
+}
+
+.text-\[\#5b2fd9\],
+.text-\[\#5B2FD9\] {
+  color: var(--brand-deep) !important;
+}
+
+.text-\[\#B388FF\],
+.text-\[\#b388ff\] {
+  color: var(--brand-light) !important;
+}
+
+.hover\:text-\[\#B388FF\]:hover {
+  color: var(--brand-light) !important;
+}
+
+.bg-\[\#F3EEFF\],
+.bg-\[\#F0EBFF\],
+.bg-\[\#F6F2FF\],
+.bg-\[\#F3EFFF\],
+.bg-\[\#F8F5FF\],
+.bg-\[\#FAF8FF\],
+.bg-\[\#EDE5FF\],
+.bg-\[\#EDE8FF\],
+.bg-\[\#F0E8FF\],
+.bg-\[\#E9DEFF\] {
+  background-color: var(--brand-soft) !important;
+}
+
+.hover\:bg-\[\#F3EEFF\]:hover,
+.hover\:bg-\[\#F6F2FF\]:hover,
+.hover\:bg-\[\#EDE5FF\]:hover,
+.hover\:bg-\[\#F0EBFF\]:hover,
+.hover\:bg-\[\#F8F5FF\]:hover,
+.hover\:bg-\[\#FAF8FF\]:hover {
+  background-color: var(--brand-soft) !important;
+}
+
+.border-\[\#ECE7FB\],
+.border-\[\#E8DEFF\],
+.border-\[\#EDE5FF\],
+.border-\[\#DDD4FF\] {
+  border-color: var(--pricing-line) !important;
+}
+
+.from-\[\#7C4DFF\],
+.from-\[\#7c4dff\] {
+  --tw-gradient-from: var(--brand) var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+
+.to-\[\#B388FF\],
+.to-\[\#b388ff\],
+.to-\[\#9A6BFF\],
+.to-\[\#9a6bff\] {
+  --tw-gradient-to: var(--brand-light) var(--tw-gradient-to-position) !important;
+}
+
+.from-\[\#E9DEFF\],
+.from-\[\#F0E8FF\] {
+  --tw-gradient-from: var(--brand-soft) var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}

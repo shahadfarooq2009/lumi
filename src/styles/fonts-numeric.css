@@ -1,0 +1,67 @@
+/* Western digits & numeric symbols → Oswald (letters stay on each UI font) */
+:root {
+  --font-numeric: 'Oswald', sans-serif;
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs1_FvgUE.ttf) format('truetype');
+  unicode-range: U+0030-0039, U+0024, U+0025, U+002B, U+002D, U+002E, U+002C, U+003A;
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs1xZogUE.ttf) format('truetype');
+  unicode-range: U+0030-0039, U+0024, U+0025, U+002B, U+002D, U+002E, U+002C, U+003A;
+}
+
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs1_FvgUE.ttf) format('truetype');
+  unicode-range: U+0030-0039, U+0024, U+0025, U+002B, U+002D, U+002E, U+002C, U+003A;
+}
+
+@font-face {
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 700 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs1xZogUE.ttf) format('truetype');
+  unicode-range: U+0030-0039, U+0024, U+0025, U+002B, U+002D, U+002E, U+002C, U+003A;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs1_FvgUE.ttf) format('truetype');
+  unicode-range: U+0030-0039, U+0024, U+0025, U+002B, U+002D, U+002E, U+002C, U+003A;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs1xZogUE.ttf) format('truetype');
+  unicode-range: U+0030-0039, U+0024, U+0025, U+002B, U+002D, U+002E, U+002C, U+003A;
+}
+
+@font-face {
+  font-family: 'Tajawal';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/oswald/v57/TK3_WkUHHAIjg75cFRf3bXL8LICs1_FvgUE.ttf) format('truetype');
+  unicode-range: U+0030-0039, U+0024, U+0025, U+002B, U+002D, U+002E, U+002C, U+003A;
+}

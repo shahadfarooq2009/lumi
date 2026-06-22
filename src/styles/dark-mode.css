@@ -1,0 +1,233 @@
+/* Dark mode — toggled via html.dark (ThemeProvider) */
+
+html.dark {
+  color-scheme: dark;
+}
+
+html.dark {
+  --bg: #0f0d18;
+  --bg-panel: #1a1628;
+  --bg-soft: #151220;
+  --bg-grid: #12101c;
+  --border: #2d2640;
+  --border-soft: #252035;
+  --border-strong: #3d3458;
+  --text: #f0ecff;
+  --text-soft: #c4bdd8;
+  --text-dim: #9b94b0;
+  --text-muted: #6f6888;
+  --brand-soft: #2a2045;
+  --brand-softer: #1e1830;
+}
+
+html.dark .lumi-app {
+  background: #0f0d18;
+  color: #e8e4f0;
+}
+
+html.dark .lumi-app::before {
+  background:
+    radial-gradient(
+      ellipse 92% 78% at -8% -18%,
+      rgba(124, 77, 255, 0.42) 0%,
+      rgba(124, 77, 255, 0.2) 28%,
+      rgba(124, 77, 255, 0.08) 48%,
+      transparent 72%
+    ),
+    radial-gradient(
+      ellipse 92% 78% at 108% -18%,
+      rgba(124, 77, 255, 0.42) 0%,
+      rgba(124, 77, 255, 0.2) 28%,
+      rgba(124, 77, 255, 0.08) 48%,
+      transparent 72%
+    ),
+    linear-gradient(180deg, #1a1530 0%, #12101c 52%, #0f0d18 100%);
+}
+
+html.dark .lumi-app::after {
+  background-image:
+    linear-gradient(rgba(124, 77, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124, 77, 255, 0.06) 1px, transparent 1px);
+}
+
+html.dark .lumi-page-header {
+  background: linear-gradient(to bottom, rgba(15, 13, 24, 0.88) 70%, rgba(15, 13, 24, 0));
+}
+
+/* Common Lumi Tailwind surfaces */
+html.dark [class*='bg-white'] {
+  background-color: #1a1628 !important;
+}
+
+html.dark [class*='bg-[#F7F7FF]'],
+html.dark [class*='bg-[#F7F4FF]'],
+html.dark [class*='bg-[#F6F2FF]'],
+html.dark [class*='bg-[#F3EEFF]'],
+html.dark [class*='bg-[#FAF8FF]'],
+html.dark [class*='bg-[#FAFAFE]'],
+html.dark [class*='bg-[#F8F5FF]'],
+html.dark [class*='bg-[#F0EBFF]'],
+html.dark [class*='bg-[#EDE5FF]'],
+html.dark [class*='bg-[#F4F5F8]'],
+html.dark [class*='bg-[#F7F7FB]'] {
+  background-color: #221c34 !important;
+}
+
+html.dark [class*='border-[#ECE7FB]'],
+html.dark [class*='border-[#E8DEFF]'],
+html.dark [class*='border-[#EDE5FF]'],
+html.dark [class*='border-[#E5E7EB]'],
+html.dark [class*='border-[#D4C4FF]'],
+html.dark [class*='border-[#F0EBFF]'] {
+  border-color: #2d2640 !important;
+}
+
+html.dark [class*='text-[#1B1530]'],
+html.dark [class*='text-[#2b2b2b]'] {
+  color: #f0ecff !important;
+}
+
+html.dark [class*='text-[#6B6585]'],
+html.dark [class*='text-[#4A4560]'] {
+  color: #a8a0c0 !important;
+}
+
+html.dark [class*='text-[#9B94B0]'] {
+  color: #7a7394 !important;
+}
+
+html.dark [class*='hover:bg-[#FAF8FF]']:hover,
+html.dark [class*='hover:bg-[#F7F4FF]']:hover,
+html.dark [class*='hover:bg-red-50']:hover {
+  background-color: #2a2240 !important;
+}
+
+html.dark [class*='hover:bg-[#F9FAFB]']:hover {
+  background-color: #252035 !important;
+}
+
+html.dark [role='menu'] {
+  background-color: #1a1628 !important;
+  border-color: #2d2640 !important;
+}
+
+html.dark .fixed.inset-0.bg-\[\#F4F5F8\] {
+  background-color: #0f0d18 !important;
+}
+
+html.dark input,
+html.dark textarea {
+  background-color: #1a1628;
+  color: #f0ecff;
+  border-color: #2d2640;
+}
+
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+  color: #6f6888;
+}
+
+/* ── Edit Quiz / Build canvas ── */
+html.dark [class*='bg-[#F8F9FC]'],
+html.dark [class*='bg-[#F0F2F7]'],
+html.dark [class*='bg-[#FAFAFE]'],
+html.dark [class*='bg-[#EEF0F5]'],
+html.dark [class*='bg-[#FBF9FF]'],
+html.dark [class*='bg-[#F5F5F8]'],
+html.dark [class*='bg-[#f5f5f8]'] {
+  background-color: #12101c !important;
+}
+
+html.dark [class*='bg-white/80'],
+html.dark [class*='bg-white/55'] {
+  background-color: rgba(26, 22, 40, 0.88) !important;
+}
+
+html.dark [class*='border-[#F0ECFB]'],
+html.dark [class*='border-[#E1E4EA]'],
+html.dark [class*='border-[#E6E9F0]'],
+html.dark [class*='border-[#ECE8F5]'],
+html.dark [class*='border-[#D8D2E8]'],
+html.dark [class*='border-[#C5CAD4]'],
+html.dark [class*='border-[#D5DAE3]'] {
+  border-color: #2d2640 !important;
+}
+
+html.dark [class*='text-[#5C5670]'],
+html.dark [class*='text-[#C4BFD6]'] {
+  color: #9b94b0 !important;
+}
+
+html.dark [class*='hover:bg-[#F6F2FF]']:hover,
+html.dark [class*='hover:bg-[#FBF9FF]']:hover,
+html.dark [class*='hover:bg-[#F8F5FF]']:hover,
+html.dark [class*='hover:bg-[#efeff3]']:hover,
+html.dark [class*='hover:bg-[#f5f5f8]']:hover {
+  background-color: #2a2240 !important;
+}
+
+html.dark [class*='disabled:bg-[#FAFAFE]']:disabled {
+  background-color: #1e1830 !important;
+}
+
+html.dark .bg-surface-tint {
+  background-color: #151220 !important;
+}
+
+html.dark .bg-surface-soft {
+  background-color: #221c34 !important;
+}
+
+html.dark .border-border,
+html.dark .border-border-soft {
+  border-color: #2d2640 !important;
+}
+
+html.dark .text-ink {
+  color: #f0ecff !important;
+}
+
+html.dark .text-ink-soft {
+  color: #c4bdd8 !important;
+}
+
+html.dark .text-ink-dim {
+  color: #9b94b0 !important;
+}
+
+html.dark .text-ink-muted {
+  color: #7a7394 !important;
+}
+
+html.dark [class*='from-[#FAFAFE]'] {
+  --tw-gradient-from: #1a1628 var(--tw-gradient-from-position) !important;
+}
+
+html.dark [class*='to-white'] {
+  --tw-gradient-to: #1a1628 var(--tw-gradient-to-position) !important;
+}
+
+.edit-canvas-grid {
+  background-image:
+    linear-gradient(to right, rgba(124, 58, 237, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(124, 58, 237, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 120% 80% at 50% 0%, black 30%, transparent 85%);
+  -webkit-mask-image: radial-gradient(ellipse 120% 80% at 50% 0%, black 30%, transparent 85%);
+}
+
+html.dark .edit-canvas-grid {
+  background-image:
+    linear-gradient(to right, rgba(124, 77, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(124, 77, 255, 0.08) 1px, transparent 1px);
+}
+
+/* ── Modals ── */
+html.dark [class*='bg-[#F3F4F6]'],
+html.dark [class*='bg-[#FAFAFA]'] {
+  background-color: #12101c !important;
+}
+
+html.dark .lumi-modal-bg {
+  background: rgba(8, 6, 14, 0.78);
+}

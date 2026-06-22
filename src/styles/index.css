@@ -1,0 +1,64 @@
+@import './fonts-arabic.css';
+@import './fonts-numeric.css';
+@import './color-themes.css';
+@import './quizora-home.css';
+@import './lumi-home.css';
+@import './dark-mode.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Plus Jakarta Sans', 'Tajawal', sans-serif;
+  }
+
+  :lang(ar),
+  [dir='rtl'] {
+    font-family: 'Tajawal', 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-arabic {
+    font-family: 'Tajawal', sans-serif !important;
+  }
+}
+
+@keyframes build-progress-shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.build-progress-shimmer {
+  display: block;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.45) 45%,
+    transparent 100%
+  );
+  animation: build-progress-shimmer 1.8s ease-in-out infinite;
+}
+
+.encouragement-toast__avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: linear-gradient(145deg, #f3eeff 0%, #e8dfff 100%);
+  border: 1px solid #ece7fb;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.encouragement-toast__avatar img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
