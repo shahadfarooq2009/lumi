@@ -1,9 +1,9 @@
 import { useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { GameScreen } from './Home/components/GameScreen'
-import { prepareCountdownAudio } from '../lib/playCountdownTick'
-import { mapEditQuizToFlashcardDeck } from '../lib/mapEditQuizToFlashcardDeck'
-import { mapProjectToGameQuestions } from '../lib/mapProjectToGameQuestions'
+import { GameScreen } from '../games/quiz/components/GameScreen'
+import { prepareCountdownAudio } from '../games/flashcard/lib/playCountdownTick'
+import { mapEditQuizToFlashcardDeck } from '../games/flashcard/lib/mapEditQuizToFlashcardDeck'
+import { mapProjectToGameQuestions } from '../games/quiz/lib/mapProjectToGameQuestions'
 import { getQuizProject } from '../lib/savedProjects'
 
 export function GamePlayPage() {

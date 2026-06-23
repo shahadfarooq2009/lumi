@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { ChevronLeft, Copy, Pencil, Share2, X } from 'lucide-react'
 import { motion } from 'framer-motion'
-import type { GameItem } from '../data/games'
+import type { GameItem } from '../../../games/registry/games'
 import { GameThumbnail } from '../thumbnails/GameThumbnails'
 import {
   GenerationStepper,

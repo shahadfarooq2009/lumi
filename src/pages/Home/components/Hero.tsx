@@ -1,4 +1,4 @@
-import type { GameItem } from '../data/games'
+import type { GameItem } from '../../../games/registry/games'
 import { arabicFontClass } from '../../../lib/arabicFont'
 
 interface HeroProps {

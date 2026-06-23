@@ -2,7 +2,7 @@ import { Check, Clock, Pencil, Play, Square } from 'lucide-react'
 import { Link, useNavigate } from 'react-router-dom'
 import type { SavedQuizProject } from '../../../lib/savedProjects'
 import { arabicFontClass } from '../../../lib/arabicFont'
-import { GAMES } from '../data/games'
+import { GAMES } from '../../../games/registry/games'
 import { ProjectMenu } from './ProjectMenu'
 
 function getProjectMeta(gameMode?: string) {

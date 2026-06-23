@@ -5,7 +5,7 @@ import type { SavedQuizProject } from '../../../lib/savedProjects'
 import type { EditQuizQuestion } from '../../../types/editQuiz'
 
 const CrosswordGame = lazy(() =>
-  import('../../crossword/CrosswordGame').then((m) => ({ default: m.CrosswordGame })),
+  import('../../../games/crossword/components/CrosswordGame').then((m) => ({ default: m.CrosswordGame })),
 )
 
 type WorkbenchView = 'edit' | 'crossword'

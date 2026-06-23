@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import type { GameItem } from '../data/games'
+import type { GameItem } from '../../../games/registry/games'
 import { GameTile } from './GameTile'
 
 interface GameGridProps {

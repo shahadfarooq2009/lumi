@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { Check, Play, Save, X } from 'lucide-react'
-import { GAMES } from '../data/games'
+import { GAMES } from '../../../games/registry/games'
 import { GameThumbnail } from '../thumbnails/GameThumbnails'
 
 interface ConvertGameModalProps {

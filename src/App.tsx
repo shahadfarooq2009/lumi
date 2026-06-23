@@ -4,7 +4,6 @@ import { SettingsModalProvider } from './contexts/SettingsModalContext'
 import { HomeApp } from './HomeApp'
 import { MyGamePage } from './pages/Home/MyGamePage'
 import { BuildPage } from './pages/BuildPage'
-import { CrosswordPage } from './pages/CrosswordPage'
 import { Dashboard } from './pages/Dashboard'
 import { GameOverview } from './pages/GameOverview'
 import { GamePlayPage } from './pages/GamePlayPage'
@@ -14,7 +13,8 @@ import { CheckoutPage } from './pages/Pricing/CheckoutPage'
 import { AccountPage } from './pages/Account/AccountPage'
 import { SettingsPage } from './pages/Settings/SettingsPage'
 import { TrashPage } from './pages/Home/TrashPage'
-import { FlashcardGamePage } from './pages/FlashcardGamePage'
+import { FlashcardGamePage } from './games/flashcard'
+import { CrosswordPage } from './games/crossword'
 export default function App() {
   return (
     <BrowserRouter>

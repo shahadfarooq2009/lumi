@@ -1,4 +1,4 @@
-import type { GameItem } from '../data/games'
+import type { GameItem } from '../../../games/registry/games'
 import { GameThumbnail } from '../thumbnails/GameThumbnails'
 
 interface GameTileProps {
