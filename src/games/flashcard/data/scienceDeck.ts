@@ -3,7 +3,7 @@ import type { Deck } from '../types/flashcard'
 export const scienceDeck: Deck = {
   id: 'science-1',
   subject: 'Science',
-  title: 'Flashcard Game',
+  title: 'Flashcard Master',
   difficulty: 'medium',
   cards: [
     { id: '1',  question: 'What is photosynthesis?',                 answer: 'Chlorophyll absorbs light energy from the sun and converts it into chemical energy through the process of photosynthesis.', keyIdea: 'Chlorophyll = Light energy → Chemical energy', topicIcon: 'leaf',  tag: 'Question' },

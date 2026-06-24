@@ -8,11 +8,17 @@ function StarSparkle({ className }: { className?: string }) {
 
 interface TitleBlockProps {
   title: string
-  currentIndex: number
-  total: number
+  showProgress?: boolean
+  currentIndex?: number
+  total?: number
 }
 
-export function TitleBlock({ title, currentIndex, total }: TitleBlockProps) {
+export function TitleBlock({
+  title,
+  showProgress = true,
+  currentIndex = 0,
+  total = 1,
+}: TitleBlockProps) {
   const pct = Math.round(((currentIndex + 1) / total) * 100)
   return (
     <div className="fc-title-block">
@@ -21,14 +27,16 @@ export function TitleBlock({ title, currentIndex, total }: TitleBlockProps) {
         <h1>{title}</h1>
         <StarSparkle className="fc-title-block__sparkle fc-title-block__sparkle--2" />
       </div>
-      <div className="fc-title-block__progress">
-        <div className="fc-title-block__counter">
-          {currentIndex + 1} <span>/ {total}</span>
+      {showProgress ? (
+        <div className="fc-title-block__progress">
+          <div className="fc-title-block__counter">
+            {currentIndex + 1} <span>/ {total}</span>
+          </div>
+          <div className="fc-title-block__bar">
+            <div className="fc-title-block__bar-fill" style={{ width: `${pct}%` }} />
+          </div>
         </div>
-        <div className="fc-title-block__bar">
-          <div className="fc-title-block__bar-fill" style={{ width: `${pct}%` }} />
-        </div>
-      </div>
+      ) : null}
     </div>
   )
 }

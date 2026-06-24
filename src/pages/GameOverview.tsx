@@ -347,7 +347,9 @@ export function GameOverview() {
     if (gameKey === 'flashcard' && project) {
       prepareCountdownAudio()
       const deck = mapEditQuizToFlashcardDeck(project.questions, project.title)
-      navigate('/play/flashcard', { state: { deck } })
+      navigate('/play/flashcard', {
+        state: { deck, questions: project.questions, projectId: id },
+      })
       return
     }
     navigate(`/game/${id}/play`)

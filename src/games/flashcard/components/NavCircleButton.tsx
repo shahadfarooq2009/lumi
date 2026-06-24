@@ -9,7 +9,7 @@ interface NavCircleButtonProps {
 export function NavCircleButton({ icon: Icon, label, onClick }: NavCircleButtonProps) {
   return (
     <div className="fc-nav-circle">
-      <button type="button" aria-label={label} onClick={onClick} className="fc-nav-circle__btn">
+      <button type="button" className="fc-nav-circle__btn" aria-label={label} onClick={onClick}>
         <Icon strokeWidth={2.2} />
       </button>
       <span className="fc-nav-circle__label">{label}</span>

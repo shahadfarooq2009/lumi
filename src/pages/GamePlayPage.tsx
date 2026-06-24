@@ -15,7 +15,10 @@ export function GamePlayPage() {
     if (!project || project.gameMode !== 'flashcard') return
     prepareCountdownAudio()
     const deck = mapEditQuizToFlashcardDeck(project.questions, project.title)
-    navigate('/play/flashcard', { state: { deck }, replace: true })
+    navigate('/play/flashcard', {
+      state: { deck, questions: project.questions, projectId: id },
+      replace: true,
+    })
   }, [navigate, project])
 
   if (project?.gameMode === 'flashcard') return null

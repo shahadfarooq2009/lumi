@@ -1,5 +1,6 @@
 import { Atom, Check, FlaskConical, Leaf, RotateCcw } from 'lucide-react'
 import type { Flashcard } from '../types/flashcard'
+import { AdvanceCountdown } from './AdvanceCountdown'
 
 interface CardFaceProps {
   side: 'front' | 'back'
@@ -29,20 +30,14 @@ export function CardFace({
   return (
     <div className={isBack ? 'fc-card__face fc-card__face--back' : 'fc-card__face'}>
       <div className="fc-card__face-inner">
-        {isBack && advanceCountdown !== null ? (
-          <span
-            className="fc-card__countdown"
-            aria-live="polite"
-            aria-label={`Next card in ${advanceCountdown} seconds`}
-          >
-            {advanceCountdown}s
-          </span>
-        ) : null}
-
         {!isBack ? <span className="fc-card__tag">{card.tag ?? 'Question'}</span> : null}
 
         {isBack ? (
           <div className="fc-card__back-layout">
+            {advanceCountdown !== null ? (
+              <AdvanceCountdown seconds={advanceCountdown} />
+            ) : null}
+
             <header className="fc-card__back-header">
               <div className="fc-card__answer-hero" aria-hidden="true">
                 <div className="fc-card__answer-badge">

@@ -1,7 +1,5 @@
 import { ArrowLeft, ArrowRight } from 'lucide-react'
-import type { Difficulty } from '../types/flashcard'
 import type { Flashcard as FlashcardType } from '../types/flashcard'
-import { DifficultySelector } from './DifficultySelector'
 import { FlipButton } from './FlipButton'
 import { Flashcard } from './Flashcard'
 import { NavCircleButton } from './NavCircleButton'
@@ -12,8 +10,6 @@ interface StageProps {
   total: number
   isFlipped: boolean
   isFlipping: boolean
-  difficulty: Difficulty
-  onDifficultyChange: (d: Difficulty) => void
   onFlip: () => void
   onPrev: () => void
   onNext: () => void
@@ -22,6 +18,7 @@ interface StageProps {
   navDirection: 'next' | 'prev' | null
   onMarkCorrect: () => void
   onMarkWrong: () => void
+  entering?: boolean
 }
 
 export function Stage({
@@ -30,8 +27,6 @@ export function Stage({
   total,
   isFlipped,
   isFlipping,
-  difficulty,
-  onDifficultyChange,
   onFlip,
   onPrev,
   onNext,
@@ -40,12 +35,11 @@ export function Stage({
   navDirection,
   onMarkCorrect,
   onMarkWrong,
+  entering = false,
 }: StageProps) {
   return (
     <section className="fc-stage">
       <div className="fc-play-stack">
-        <DifficultySelector difficulty={difficulty} onChange={onDifficultyChange} />
-
         <Flashcard
           card={card}
           cardIndex={cardIndex}
@@ -58,6 +52,7 @@ export function Stage({
           navDirection={navDirection}
           onMarkCorrect={onMarkCorrect}
           onMarkWrong={onMarkWrong}
+          entering={entering}
         />
 
         <div className="fc-controls__center">

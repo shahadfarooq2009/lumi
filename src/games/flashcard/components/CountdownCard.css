@@ -1,0 +1,292 @@
+.flashcard-game .countdown-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: var(--fc-r-2xl, 36px);
+  border: 2px solid rgba(255, 255, 255, 0.78);
+  background: linear-gradient(165deg, #ffc9c4 0%, #ffb0b0 52%, #ff9f9a 100%);
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+  box-sizing: border-box;
+  box-shadow: 0 18px 40px -20px rgba(176, 50, 70, 0.38);
+}
+
+.flashcard-game .countdown-card::before {
+  content: '';
+  position: absolute;
+  inset: 18px;
+  border-radius: 28px;
+  background: #ffffff;
+  border: 1.5px solid rgba(255, 214, 208, 0.9);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    0 4px 18px rgba(176, 50, 70, 0.08);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.flashcard-game .countdown-card__content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 38px 48px 46px;
+  box-sizing: border-box;
+}
+
+.flashcard-game .countdown-card__heading {
+  margin: 0 0 14px;
+  color: #ff6574;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: -0.5px;
+}
+
+.flashcard-game .countdown-difficulty {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 18px;
+  padding: 8px 18px;
+  border: 1.5px solid currentColor;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.48);
+  font-size: 14px;
+  font-weight: 600;
+  pointer-events: none;
+  user-select: none;
+}
+
+.flashcard-game .countdown-difficulty--easy {
+  color: #2fc79a;
+}
+
+.flashcard-game .countdown-difficulty--medium {
+  color: #f4a800;
+}
+
+.flashcard-game .countdown-difficulty--hard {
+  color: #ff6373;
+}
+
+.flashcard-game .countdown-visual {
+  position: relative;
+  width: min(100%, 330px);
+  height: 320px;
+  display: grid;
+  place-items: center;
+}
+
+.flashcard-game .countdown-number-container {
+  position: relative;
+  width: 285px;
+  height: 285px;
+  display: grid;
+  place-items: center;
+  animation: fc-countdownPop 0.55s cubic-bezier(0.2, 0.9, 0.25, 1.3);
+}
+
+.flashcard-game .countdown-ring {
+  position: absolute;
+  inset: 0;
+  border: 4px solid rgba(255, 255, 255, 0.88);
+  border-right-color: rgba(255, 108, 124, 0.46);
+  border-bottom-color: rgba(255, 174, 112, 0.48);
+  border-radius: 50%;
+  box-shadow:
+    0 0 38px rgba(255, 119, 132, 0.22),
+    inset 0 0 28px rgba(255, 255, 255, 0.48);
+  animation: fc-countdownRing 1s linear infinite;
+}
+
+.flashcard-game .countdown-number {
+  position: relative;
+  z-index: 2;
+  font-size: 190px;
+  font-weight: 700;
+  line-height: 1;
+  color: transparent;
+  background: linear-gradient(
+    180deg,
+    #ffb38c 0%,
+    #ff826f 42%,
+    #ff536d 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  filter:
+    drop-shadow(0 12px 14px rgba(220, 77, 94, 0.22))
+    drop-shadow(0 0 20px rgba(255, 138, 104, 0.22));
+}
+
+.flashcard-game .countdown-number--go {
+  font-size: 105px;
+}
+
+.flashcard-game .countdown-card__message {
+  margin-top: 10px;
+  color: #55545d;
+  text-align: center;
+}
+
+.flashcard-game .countdown-card__message p {
+  margin: 0 0 5px;
+  font-size: 21px;
+  font-weight: 500;
+}
+
+.flashcard-game .countdown-card__message span {
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.flashcard-game .countdown-decoration {
+  position: absolute;
+  z-index: 3;
+  display: block;
+  animation: fc-countdownSparkle 1.3s ease-in-out infinite;
+}
+
+.flashcard-game .countdown-decoration--one {
+  top: 18%;
+  left: 7%;
+  color: #ffffff;
+  font-size: 28px;
+}
+
+.flashcard-game .countdown-decoration--two {
+  top: 28%;
+  right: 4%;
+  color: #ffffff;
+  font-size: 20px;
+  animation-delay: 0.2s;
+}
+
+.flashcard-game .countdown-decoration--three {
+  top: 48%;
+  left: 1%;
+  color: #ffd05f;
+  font-size: 18px;
+  animation-delay: 0.4s;
+}
+
+.flashcard-game .countdown-decoration--four {
+  top: 43%;
+  right: 0;
+  color: #ff9aab;
+  font-size: 25px;
+  animation-delay: 0.6s;
+}
+
+.flashcard-game .countdown-decoration--five {
+  bottom: 16%;
+  right: 10%;
+  color: #ffffff;
+  font-size: 25px;
+  animation-delay: 0.8s;
+}
+
+@keyframes fc-countdownPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+
+  65% {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fc-countdownRing {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fc-countdownSparkle {
+  0%,
+  100% {
+    opacity: 0.42;
+    transform: scale(0.75) rotate(0deg);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.15) rotate(14deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .flashcard-game .countdown-card::before {
+    inset: 14px;
+    border-radius: 22px;
+  }
+
+  .flashcard-game .countdown-card__content {
+    padding: 28px 20px 34px;
+  }
+
+  .flashcard-game .countdown-card {
+    min-height: 100%;
+  }
+
+  .flashcard-game .countdown-card__heading {
+    font-size: 27px;
+  }
+
+  .flashcard-game .countdown-visual {
+    width: min(100%, 260px);
+    height: 260px;
+  }
+
+  .flashcard-game .countdown-number-container {
+    width: 220px;
+    height: 220px;
+  }
+
+  .flashcard-game .countdown-number {
+    font-size: 140px;
+  }
+
+  .flashcard-game .countdown-number--go {
+    font-size: 80px;
+  }
+
+  .flashcard-game .countdown-card__message p {
+    font-size: 18px;
+  }
+
+  .flashcard-game .countdown-card__message span {
+    font-size: 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flashcard-game .countdown-number-container,
+  .flashcard-game .countdown-ring,
+  .flashcard-game .countdown-decoration {
+    animation: none;
+  }
+}

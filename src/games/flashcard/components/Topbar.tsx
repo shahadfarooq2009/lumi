@@ -1,5 +1,4 @@
 import { ArrowLeft } from 'lucide-react'
-import { useNavigate } from 'react-router-dom'
 import { IconGlassButton } from './IconGlassButton'
 import { StreakPill } from './StreakPill'
 import { TitleBlock } from './TitleBlock'
@@ -7,13 +6,26 @@ import { Utility } from './Utility'
 
 interface TopbarProps {
   title: string
-  currentIndex: number
-  total: number
-  streak: number
+  variant?: 'full' | 'pregame'
+  currentIndex?: number
+  total?: number
+  streak?: number
+  onBackRequest: () => void
+  onEndGame?: () => void
+  endGameDisabled?: boolean
 }
 
-export function Topbar({ title, currentIndex, total, streak }: TopbarProps) {
-  const navigate = useNavigate()
+export function Topbar({
+  title,
+  variant = 'full',
+  currentIndex = 0,
+  total = 1,
+  streak = 0,
+  onBackRequest,
+  onEndGame,
+  endGameDisabled = false,
+}: TopbarProps) {
+  const isPregame = variant === 'pregame'
 
   return (
     <header className="fc-topbar">
@@ -21,16 +33,33 @@ export function Topbar({ title, currentIndex, total, streak }: TopbarProps) {
         <IconGlassButton
           icon={ArrowLeft}
           ariaLabel="Back to My Game"
-          onClick={() => navigate('/mygame')}
+          onClick={onBackRequest}
         />
       </div>
 
-      <TitleBlock title={title} currentIndex={currentIndex} total={total} />
+      <TitleBlock
+        title={title}
+        showProgress={!isPregame}
+        currentIndex={currentIndex}
+        total={total}
+      />
 
-      <div className="fc-topbar__right">
-        <StreakPill count={streak} />
-        <Utility />
-      </div>
+      {isPregame ? (
+        <div className="fc-topbar__right fc-topbar__right--spacer" aria-hidden />
+      ) : (
+        <div className="fc-topbar__right">
+          <button
+            type="button"
+            className="fc-end-game-btn"
+            onClick={onEndGame}
+            disabled={endGameDisabled}
+          >
+            End Game
+          </button>
+          <StreakPill count={streak} />
+          <Utility />
+        </div>
+      )}
     </header>
   )
 }

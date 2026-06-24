@@ -45,6 +45,9 @@ function createBeepWavDataUrl(frequency: number, durationMs = 160, volume = 0.5)
   return `data:audio/wav;base64,${btoa(binary)}`
 }
 
+const GO_FREQUENCY = 784
+const GO_SOUND_SRC = createBeepWavDataUrl(GO_FREQUENCY, 220, 0.55)
+
 const TICK_SOUND_SRC: Record<number, string> = {
   3: createBeepWavDataUrl(TICK_FREQUENCIES[3]),
   2: createBeepWavDataUrl(TICK_FREQUENCIES[2]),
@@ -54,6 +57,7 @@ const TICK_SOUND_SRC: Record<number, string> = {
 const UNLOCK_SOUND_SRC = createBeepWavDataUrl(220, 30, 0.01)
 
 const tickAudios: Partial<Record<number, HTMLAudioElement>> = {}
+let goAudio: HTMLAudioElement | null = null
 let unlockAudio: HTMLAudioElement | null = null
 let audioUnlocked = false
 let soundsPreloaded = false
@@ -68,6 +72,11 @@ function ensureTickAudios() {
     tickAudios[tick] = audio
     audio.load()
   }
+
+  goAudio = new Audio(GO_SOUND_SRC)
+  goAudio.preload = 'auto'
+  goAudio.volume = 0.95
+  goAudio.load()
 
   soundsPreloaded = true
 }
@@ -109,6 +118,24 @@ export function playCountdownTick(tick: number) {
     audio.pause()
     audio.currentTime = 0
     void audio.play().catch(() => {
+      audioUnlocked = false
+    })
+  } catch {
+    // Audio may be unavailable in some environments.
+  }
+}
+
+export function playCountdownGo() {
+  if (!getUserSettings().game.soundEffects) return
+
+  ensureTickAudios()
+
+  if (!goAudio) return
+
+  try {
+    goAudio.pause()
+    goAudio.currentTime = 0
+    void goAudio.play().catch(() => {
       audioUnlocked = false
     })
   } catch {

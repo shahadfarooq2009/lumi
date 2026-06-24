@@ -5,11 +5,18 @@ import { getUserSettings } from '../../../lib/userSettings'
 const TICK_MS = 1000
 const START_VALUE = 3
 
-export function useGameStartCountdown() {
+export function useGameStartCountdown(paused = false) {
   const timerEnabled = getUserSettings().game.timerEnabled
-  const [count, setCount] = useState<number | null>(timerEnabled ? START_VALUE : null)
+  const [count, setCount] = useState<number | null>(null)
   const skippedRef = useRef(false)
   const lastPlayedRef = useRef<number | null>(null)
+  const startedRef = useRef(false)
+
+  useEffect(() => {
+    if (paused || startedRef.current) return
+    startedRef.current = true
+    setCount(timerEnabled ? START_VALUE : null)
+  }, [paused, timerEnabled])
 
   const skip = useCallback(() => {
     skippedRef.current = true

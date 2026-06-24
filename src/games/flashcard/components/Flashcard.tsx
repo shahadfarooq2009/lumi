@@ -15,6 +15,7 @@ interface FlashcardProps {
   navDirection: 'next' | 'prev' | null
   onMarkCorrect: () => void
   onMarkWrong: () => void
+  entering?: boolean
 }
 
 export function Flashcard({
@@ -29,6 +30,7 @@ export function Flashcard({
   navDirection,
   onMarkCorrect,
   onMarkWrong,
+  entering = false,
 }: FlashcardProps) {
   const dealDirectionRef = useRef<'next' | 'prev' | null>(null)
 
@@ -45,12 +47,19 @@ export function Flashcard({
     .join(' ')
 
   return (
-    <div className="fc-card-wrap">
+    <div className={['fc-card-wrap', entering ? 'fc-card-wrap--enter' : ''].filter(Boolean).join(' ')}>
       <div className="fc-card-area">
         <div key={cardIndex} className={motionClass}>
-          <button
-            type="button"
+          <div
+            role="button"
+            tabIndex={0}
             onClick={onFlip}
+            onKeyDown={(e) => {
+              if (e.key === ' ' || e.key === 'Enter') {
+                e.preventDefault()
+                onFlip()
+              }
+            }}
             aria-label="Flashcard. Tap to flip."
             className={[
               'fc-card',
@@ -67,7 +76,7 @@ export function Flashcard({
               onMarkCorrect={onMarkCorrect}
               onMarkWrong={onMarkWrong}
             />
-          </button>
+          </div>
         </div>
       </div>
       <CardDots activeIndex={cardIndex} total={total} navDirection={navDirection} />
